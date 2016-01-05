@@ -1,2 +1,3 @@
-# event-holder-ruby
-Online Registration System for American Museum of G.I.
+#Coursework project for CSCE 606
+
+Team: Agilize
