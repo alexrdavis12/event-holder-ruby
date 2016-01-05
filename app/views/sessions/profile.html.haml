@@ -1,0 +1,69 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+
+.container
+      
+  .row
+    .col-md-4
+    .col-md-4
+      .row
+        .col-xs-4
+        .col-xs-4
+          %label Profile
+        .col-xs-4
+      .table-responsive
+        %table.table.table-basic
+          %tbody
+            %tr
+              %td
+                %b Email:
+              %td
+                = @current_user.email
+            %tr
+              %td
+                %b Lastname:
+              %td
+                = @current_user.lastname
+            %tr
+              %td
+                %b Firstname:
+              %td
+                = @current_user.firstname
+            %tr
+              %td
+                %b Gender:
+              %td
+                = @current_user.gender
+            %tr
+              %td
+                %b Zip Code:
+              %td
+                = @current_user.zipcode
+      .col-md-4.text-center
+      %a{:href => setting_path, :class =>'btn btn-success'} Edit 
+  
+
+
+.footer{:style => "padding-top: 100px;"}
+  .row{:style => "background-color:rgba(15,39,64,1.00);"}
+    .col-md-3
+    .col-md-6
+      =image_tag "im3.png", :width=>"100%"
+    .col-md-3

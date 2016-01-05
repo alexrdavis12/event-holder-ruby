@@ -1,0 +1,30 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+	.navbar-header
+		%a.navbar-brand{:href => "#"} M.A.G.I
+	%ul.nav.navbar-nav.navbar-right
+		%li
+			%a{:href=>'allevent'}
+				%i{:class=>"fa fa-align-justify fa-fw"} 
+				Event
+
+		%li
+			%a{:href=>'profile'}
+				%i{:class=>"fa fa-user fa-fw"} 
+				Profile
+				
+		%li
+			%a{:href=>'logout'}
+				%i{:class=>"fa fa-sign-out fa-fw"} 
+				Logout
+
+
+
+.container
+	.row
+		.col-sm-2
+		.col-sm-8
+		.alert.alert-success
+			=flash[:notice] 
+		.col-sm-2
+
+

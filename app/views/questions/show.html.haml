@@ -1,0 +1,68 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+
+.container
+  .row
+    .col-md-2
+    .col-md-8
+      .panel.panel-primary
+        .panel-heading
+          .row
+            .col-xs-5
+            .col-xs-2
+              %h1.panel-title Questions
+            .col-xs-5
+
+        .panel-body
+          .table-responsive
+            %table.table.table-striped.table-bordered.table-hover
+              %thead
+                %tr
+                  %th  NO.
+                  %th Question Title
+                  %th Question Type
+                  %th Question Option
+              %tbody
+                - @questions.each do |q|
+                  %tr
+                    %td= q.qid
+                    %td= q.qtitle
+                    %td
+                      - if q.qtype== '1'
+                        Text
+                      - elsif q.qtype=='2'
+                        Checkboxes
+                      - elsif q.qtype=='3'
+                        Radio buttons
+                      - elsif q.qtype=='4'
+                        Dropdown
+                      - elsif q.qtype=='5'
+                        Paragraph text
+                    %td
+                      - if q.qtype== '2' or q.qtype== '3' or q.qtype== '4'
+                        - list= q.qoption.split('|')
+                        - list.each do |l|
+                          =l
+                          %br
+    .col-md-2
+  .row
+    .col-md-5
+    .col-md-3
+      %a{:class=>"btn btn-primary", :href=>"allevent"}All Events

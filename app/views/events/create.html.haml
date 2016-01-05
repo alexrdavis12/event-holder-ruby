@@ -1,0 +1,60 @@
+= javascript_include_tag "date"
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+.container
+  %div{:class=>"modal fade", :id=>"myModal", :role=>"dialog"}
+    %div{:class=>"modal-dialog"}
+      %div{:class=>"modal-content"}
+        %div{:class=>"modal-header"}
+          %h4{:class=>"modal-title"} Warning!
+        %div{:class=>"modal-body"}
+          %p End Date Should Be After Start Date.
+  .row
+    .col-md-2
+    .col-md-8
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Event
+        .panel-body
+          = form_tag(:action => 'create') do
+            .form-group
+              %label Event Title
+              %input{:class => 'form-control', :value=>'', :name=>"Title"}
+  
+            .form-group
+              %label Event Location
+              %input{:class => 'form-control', :value=>'', :name=>"Location"}
+  
+            .form-group
+              %label Event Description
+              %textarea{:class => 'form-control', :rows => "8", :value=>'', :name=>"Description"}
+  
+            .form-group
+              %label Start Date
+              %input{:type => 'text', :class => 'form-control', :id =>'dp1',:value=>'', :name=>"Start_Date"}
+
+            .form-group
+              %label End Date
+              %input{:type => 'text', :class => 'form-control', :id =>'dp2',:value=>'', :name=>"End_Date"}
+  
+            = submit_tag("Create", :class => 'btn btn-primary')
+       
+  .row
+    %p{:id => "demo"}

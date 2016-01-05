@@ -1,0 +1,33 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+
+
+.container
+  .row
+    .col-md-3
+    .col-md-5
+      .alert.alert-info
+        %h5.modal-title 
+          You have successfully submited the questionaire! 
+          
+      .text-right
+        %a{:href => 'allevent'}
+          %i.fa.fa-align-justify.fa-fw
+          see other events

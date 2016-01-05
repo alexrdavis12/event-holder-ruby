@@ -1,0 +1,93 @@
+= javascript_include_tag "create_event"
+
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+.container
+  .row
+    .col-md-2
+    .col-md-8
+      -if @flash_notice != ''
+        .alert.alert-danger
+          =@flash_notice
+      -if @error_type != -1
+        %input{:type=>"hidden", :value => 3, :id => 'current_qid'}
+        = form_tag({:action => 'create'}) do
+          %div#q_form
+            %input{:type=>"hidden", :value=>@eid, :name=>:q_eid}
+            .panel.panel-success#Q1
+              .panel-heading
+                %h3.panel-title
+                  Question
+              .panel-body
+                .form-group
+                  %input{:class => 'form-control', :value=>'', :name=>"Q1[title]", :placeholder => "Title"}
+                .form-group
+                  %label Type
+                  %select{:class => 'form-control', :name => "Q1[type]", :belong => "1"}
+                    %option{:value => 1}= "Text"
+                    %option{:value => 2}= "Checkboxes"
+                    %option{:value => 3}= "Radio Buttons"
+                    %option{:value => 4}= "Dropdown"
+                    %option{:value => 5}= "Paragraph Text"
+                  .form-group
+                  %input{:class => 'btn btn-danger', :type => "button", :onclick => "javascript:delete_question(1)", :value => 'Delete Question'} 
+  
+            .panel.panel-success#Q2
+              .panel-heading
+                %h3.panel-title
+                  Question
+              .panel-body
+                .form-group
+                  %input{:class => 'form-control', :value=>'', :name=>"Q2[title]", :placeholder => "Title"}
+                .form-group
+                  %label Type
+                  %select{:class => 'form-control', :name => "Q2[type]", :belong => "2"}
+                    %option{:value => 1}= "Text"
+                    %option{:value => 2}= "Checkboxes"
+                    %option{:value => 3}= "Radio Buttons"
+                    %option{:value => 4}= "Dropdown"
+                    %option{:value => 5}= "Paragraph Text"
+                  .form-group
+                  %input{:class => 'btn btn-danger', :type => "button", :onclick => "javascript:delete_question(2)", :value => 'Delete Question'} 
+  
+            .panel.panel-success#Q3
+              .panel-heading
+                %h3.panel-title
+                  Question
+              .panel-body
+                .form-group
+                  %input{:class => 'form-control', :value=>'', :name=>"Q3[title]", :placeholder => "Title"}
+                .form-group
+                  %label Type
+                  %select{:class => 'form-control', :name => "Q3[type]", :belong => "3"}
+                    %option{:value => 1}= "Text"
+                    %option{:value => 2}= "Checkboxes"
+                    %option{:value => 3}= "Radio Buttons"
+                    %option{:value => 4}= "Dropdown"
+                    %option{:value => 5}= "Paragraph Text"
+                  .form-group
+                  %input{:class => 'btn btn-danger', :type => "button", :onclick => "javascript:delete_question(3)", :value => 'Delete Question'} 
+  
+          %input{:class => 'btn btn-primary', :type => "button", :onclick => "", :id => 'create_q_btn', :value => 'Add Question'} 
+          = submit_tag("Create", :class => 'btn btn-success')
+    .col-md-2
+  .row
+    %br
+

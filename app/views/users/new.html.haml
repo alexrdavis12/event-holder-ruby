@@ -1,0 +1,30 @@
+%script{:src=>"https://code.highcharts.com/highcharts.js"}
+= javascript_include_tag "pie"
+
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav
+    %li
+      %a{:href => "#"} Link
+    %li
+      %a{:href => "#"} Link
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      =link_to "Event", 'allevent'
+    %li
+      =link_to 'profile', 'profile'
+    %li
+      =link_to 'logout', 'logout'
+
+%div{:id=>'con', :style=>'height: 500px'}
+
+%div{:id=>'Local', :style=>'display: none'}12
+%div{:id=>'Houston', :style=>'display: none'}23
+%div{:id=>'Austin', :style=>'display: none'}12
+%div{:id=>'San', :style=>'display: none'}18
+%div{:id=>'Dallas', :style=>'display: none'}32
+%div{:id=>'Other', :style=>'display: none'}19
+%div{:id=>'Out', :style=>'display: none'}73
+
+	

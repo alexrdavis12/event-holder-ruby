@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qid: 1
+  eid: 1
+  qtitle: MyText
+  qtype: MyString
+  qoption: MyString
+  qparentid: 1
+
+two:
+  qid: 1
+  eid: 1
+  qtitle: MyText
+  qtype: MyString
+  qoption: MyString
+  qparentid: 1

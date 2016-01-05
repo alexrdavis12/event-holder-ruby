@@ -1,0 +1,81 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+%nav.navbar.navbar-vertical-left
+  %ul.nav.navbar-nav{:role => "tablist"}
+    %li{:class=> "active"}
+      %a{"data-toggle" => "tab", :href => "#dashboard", :role => "tab"}
+        %i.fa.fa-dashboard.fa-fw.fa-lg
+        %span Dashboard
+    %li
+      %a{"data-toggle" => "tab", :href => "#table", :role => "tab"}
+        %i.fa.fa-table.fa-fw.fa-lg
+        %span Table
+    %li
+      %a{"data-toggle" => "tab", :href => "#chart", :role => "tab"}
+        %i.fa.fa-pie-chart.fa-fw.fa-lg
+        %span Chart
+
+
+.container
+  .row
+    .col-md-2
+    .col-md-8
+      -if flash[:notice] != nil
+        .alert.alert-success.alert-dismissable
+          %button.close{:type=>"button", "data-dismiss"=>"alert"}
+            %span{"aria-hidden"=>true}×
+            %span.sr-only Close
+          %strong 
+            =flash[:notice]
+            =flash[:color]
+      -if @events.length == 0
+        .alert.alert-info.alert-dismissable
+          %button.close{:type=>"button", "data-dismiss"=>"alert"}
+            %span{"aria-hidden"=>true}×
+            %span.sr-only Close
+          %strong No available events
+      -else
+        - cnt= 0
+        - @events.each do |e|
+          - cnt+=1
+          .panel.panel-primary
+            .panel-heading
+              %h3.panel-title Event #{cnt}
+            .panel-body
+              %label= e.etitle 
+              %br
+              %label Location 
+              = e.elocation
+              %br
+              %label Start Time  
+              = e.estart
+              %br
+              %label End Time  
+              = e.eend
+              %br
+              %label Event Description 
+              = e.edescription
+              %br
+              %a{:href => "datashow?eid=#{e.id}", :class =>'btn btn-primary btn-sm', :role=>'button'} Show
+              %a{:href => "eventdelete?eid=#{e.id}", :class =>'btn btn-primary btn-sm', :role=>'button'} Delete
+              %br
+
+      
+      %a{:href => 'EventCreate', :class =>'btn btn-primary btn-sm', :role=>'button'} Create Event

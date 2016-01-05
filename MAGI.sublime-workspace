@@ -1,0 +1,308 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chec",
+				"checked_ratings_set"
+			],
+			[
+				"sort",
+				"sort_by"
+			],
+			[
+				"check",
+				"checked_rating_box"
+			],
+			[
+				"all",
+				"all_ratings"
+			],
+			[
+				"pa",
+				"params"
+			],
+			[
+				"movies",
+				"moviesbyname"
+			],
+			[
+				"pix",
+				"pix_size"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"wi",
+				"width	int"
+			],
+			[
+				"fget",
+				"fgetc(FILE *)	int"
+			],
+			[
+				"arg",
+				"arg_store	int [3]"
+			],
+			[
+				"SEEK_",
+				"SEEK_CUR	Macro"
+			],
+			[
+				"fge",
+				"fgetc(FILE *)	int"
+			],
+			[
+				"fg",
+				"fgetc(FILE *)	int"
+			],
+			[
+				"do",
+				"dob	Insert do |variable| … end"
+			],
+			[
+				"x",
+				"xpa	xpath(..) { .. }"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/Users/jedihy/Downloads/pgf_3/README-3.0.0",
+		"/Users/jedihy/Documents/606hw2/app/models/movie.rb",
+		"/Users/jedihy/Dropbox/TAMU/Courses/csce606/HW2/Huang_Yi.txt",
+		"/Users/jedihy/Dropbox/TAMU/Courses/csce606/HW2/http:yihuang-csce606.herokuapp.com:movies.txt",
+		"/Users/jedihy/Documents/606hw2/app/controllers/movies_controller.rb",
+		"/Users/jedihy/Documents/606hw2/app/views/movies/showbyname.html.haml",
+		"/Users/jedihy/Documents/606hw2/app/views/movies/showbydate.html.haml",
+		"/Users/jedihy/Documents/Project/tamu_coursework/vizpr01_1/balloonsmall.ppm",
+		"/Users/jedihy/Dropbox/TAMU/Courses/csce646/pr01/pr01.cpp",
+		"/Users/jedihy/Downloads/test1.rb",
+		"/Users/jedihy/Documents/Project/tamu_coursework/vizpr01_1/Makefile",
+		"/Users/jedihy/Downloads/test.rb",
+		"/Users/jedihy/Downloads/ppms/balloonsmall.ppm",
+		"/Users/jedihy/Documents/Project/csce606/hw/hw1/ruby-calisthenics/lib/rock_paper_scissors.rb",
+		"/Users/jedihy/Dropbox/个人信息/出国材料/CV/CV-job.tex",
+		"/Users/jedihy/Documents/Project/csce606/hw/hw1/ruby-calisthenics/lib/fun_with_strings.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/hw1/ruby-calisthenics/lib/dessert.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/hw1/ruby-calisthenics/lib/attr_accessor_with_history.rb",
+		"/Users/jedihy/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/spec/dessert_spec.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/lib/fun_with_strings.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/lib/attr_accessor_with_history.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/lib/dessert.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/spec/rock_paper_scissors_spec.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/spec/fun_with_strings_spec.rb",
+		"/Users/jedihy/Documents/Project/csce606/hw/ruby-calisthenics/tests/fun_with_strings_spec.rb",
+		"/Users/jedihy/Documents/Project/csce606/reading/reading1.tex",
+		"/Users/jedihy/Dropbox/TAMU/Courses/pr01.cpp",
+		"/Users/jedihy/Documents/Project/tamu_coursework/vizpr01/pr01.cpp",
+		"/Users/jedihy/Documents/Project/tamu_coursework/vizpr01/Makefile",
+		"/Users/jedihy/Library/Developer/Xcode/DerivedData/proximac-aigrxkylssimkwggepevdkgkrdbc/Build/Products/Release/config.json",
+		"/Users/jedihy/Downloads/sso_lob_footer-3.jsp",
+		"/Users/jedihy/Downloads/xnu-2782.1.97/bsd/vfs/vfs_subr.c",
+		"/Users/jedihy/Library/Rime/default.yaml",
+		"/Users/jedihy/Library/Rime/user.yaml"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jedihy/Documents/606hw2",
+			"/Users/jedihy/Downloads/xnu-2782.1.97"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sortmethod",
+			"submit_tag",
+			"Save Changes",
+			"movie_path",
+			"movies_path",
+			"writePPM",
+			"FILE",
+			"glutInitWindowSize",
+			"readPPM",
+			"FILE",
+			"getter",
+			"br",
+			"pow",
+			"setPixels",
+			"pixmap",
+			"stdarg.h",
+			"struct klist",
+			"struct proc",
+			"struct proc {",
+			"stdio.h",
+			"vnode_internal.h",
+			"_proc_info",
+			"libproc.h",
+			"process_policy.h",
+			"__proc_info",
+			"proc_pidpath(",
+			"proc_pidapthinfo"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.cc":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "MAGI.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 268.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

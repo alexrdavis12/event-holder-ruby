@@ -1,0 +1,146 @@
+.carousel-inner .item img{
+      width: 70%;
+      margin: auto
+  }
+
+.carousel-inner .item a img {
+    width: 70%;
+    margin: auto
+}
+
+.navbar-vertical-left {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  height: 100%;
+  width: 160px;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  z-index: 999;
+}
+
+.navbar-vertical-left ul.navbar-nav {
+  width: 100%;
+  height: 60%;
+  display: table;
+  margin: 0;
+  color: #000
+}
+
+.navbar-vertical-left ul.navbar-nav li a{
+  color: #000
+}
+
+.panel-style1{
+  background-color: #6495ED;
+  color: #000080
+}
+
+.panel-style2{
+  background-color: #FF7F50;
+  color: #A0522D
+}
+
+.panel-style3{
+  background-color: #9ACD32;
+  color: #228B22
+}
+
+.panel-style4{
+  color: #468847;  
+  background-color: #dff0d8;  
+  border-color: #d6e9c6
+}
+
+.panel-style5{
+  color: #31708F;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1
+}
+
+.panel-style6{
+  color: #8a6d3b;
+  background-color: #fcf8e3
+
+}
+
+.panel-style7{
+  background-color: #f2dede;
+  color: #a94442
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

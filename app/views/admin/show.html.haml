@@ -1,0 +1,186 @@
+%script{:src=>"https://code.highcharts.com/highcharts.js"}
+= javascript_include_tag "pie"
+
+%nav.navbar.navbar-fixed-top.navbar-inverse{:role => "navigation", :position => "fixed"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+
+%nav.navbar.navbar-vertical-left
+  %ul.nav.navbar-nav{:role => "tablist"}
+    %li{:class=> "active"}
+      %a{"data-toggle" => "tab", :href => "#dashboard", :role => "tab"}
+        %i.fa.fa-dashboard.fa-fw.fa-lg
+        %span Dashboard
+    %li
+      %a{"data-toggle" => "tab", :href => "#table", :role => "tab"}
+        %i.fa.fa-table.fa-fw.fa-lg
+        %span Table
+    %li
+      %a{"data-toggle" => "tab", :href => "#chart", :role => "tab"}
+        %i.fa.fa-pie-chart.fa-fw.fa-lg
+        %span Chart
+
+
+.container{:class => "tab-content"}
+  .row{:id => "dashboard", :class => "tab-pane active"}
+    .col-md-3
+    .col-md-9
+      %br
+      %br
+      %br
+      %br
+      .row
+        .col-lg-3
+          .panel.panel-style6
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-bicycle.fa-5x
+                .col-xs-9.text-right
+                  %h1=@collegeStation
+            .panel-footer
+              %span.pull-left College Station
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+        .col-lg-3
+          .panel.panel-style4
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-taxi.fa-5x
+                .col-xs-9.text-right
+                  %h1=@houston
+            .panel-footer
+              %span.pull-left Hoston Area
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+        .col-lg-3
+          .panel.panel-style7
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-car.fa-5x
+                .col-xs-9.text-right
+                  %h1=@austin
+            .panel-footer
+              %span.pull-left Austin Area
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+        .col-lg-3
+          .panel.panel-style5
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-motorcycle.fa-5x
+                .col-xs-9.text-right
+                  %h1=@sanAntonio
+            .panel-footer
+              %span.pull-left San Antonio Area
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+      .row
+        .col-lg-3
+          .panel.panel-style1
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-bus.fa-5x
+                .col-xs-9.text-right
+                  %h1=@dallasOrFortWorth
+            .panel-footer
+              %span.pull-left Dallas Area
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+        .col-lg-3
+          .panel.panel-style2
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-truck.fa-5x
+                .col-xs-9.text-right
+                  %h1=@otherAreaInTexas          
+            .panel-footer
+              %span.pull-left Other Area In Texas
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+        .col-lg-3
+          .panel.panel-style3
+            .panel-heading
+              .row
+                .col-xs-3
+                  %i.fa.fa-plane.fa-5x
+                .col-xs-9.text-right
+                  %h1=@outOfTexas
+            .panel-footer
+              %span.pull-left Out Of Texas
+              %span.pull-right
+                %i.fa.fa-users
+              .clearfix
+
+  .row{:id => "table", :class => "tab-pane"}
+    .col-md-3
+    .col-md-7
+      %br
+      %br
+      %br
+      %br
+      .panel.panel-primary
+        .panel-heading
+          %h1.panel-title Event Data
+        .panel-body
+          .table-responsive
+            %table.table.table-striped.table-bordered.table-hover
+              %thead
+                %tr
+                  %th Email
+                  %th First Name
+                  %th Last Name
+                  %th Area
+              %tbody
+                - cnt=0
+                - @Users.each do |u|
+                  - if cnt%4==0
+                    %tr
+                  %td= u
+                  - cnt+=1
+          %label Total 
+          %label=@collegeStation+@houston+@austin+@sanAntonio+@dallasOrFortWorth+@otherAreaInTexas+@outOfTexas
+          %a{:href => "answer.csv.csv?eid=#{@eid}", :class =>'btn btn-primary btn-sm', :role=>'button'} Download
+
+  .row{:id => "chart", :class => "tab-pane"}
+    .col-md-3
+    .col-md-7
+      %br
+      %br
+      %br
+      %br
+      %div{:id=>'con', :style=>'height: 500px'}
+  
+%div{:id=>'Local', :style=>'display: none'}=@collegeStation
+%div{:id=>'Houston', :style=>'display: none'}=@houston
+%div{:id=>'Austin', :style=>'display: none'}=@austin
+%div{:id=>'San', :style=>'display: none'}=@sanAntonio
+%div{:id=>'Dallas', :style=>'display: none'}=@dallasOrFortWorth
+%div{:id=>'Other', :style=>'display: none'}=@otherAreaInTexas
+%div{:id=>'Out', :style=>'display: none'}=@outOfTexas

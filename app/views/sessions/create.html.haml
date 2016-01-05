@@ -1,0 +1,80 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+
+
+.container
+  %div{:class=>"modal fade", :id=>"myModal", :role=>"dialog"}
+    %div{:class=>"modal-dialog"}
+      %div{:class=>"modal-content"}
+        %div{:class=>"modal-header"}
+          %h4{:class=>"modal-title"} Warning!
+        %div{:class=>"modal-body"}
+          %p Confirm Password Not Match.
+
+  .row
+    .col-md-4
+    .col-md-4
+      - if @flash_notice != ""
+        .alert.alert-danger
+          %button.close{:type=>"button", "data-dismiss"=>"alert"}
+            %span{"aria-hidden"=>true}×
+            %span.sr-only Close
+          %strong 
+            = @flash_notice
+            - if @user.errors.any?
+              - @user.errors.full_messages.each do |error|
+                = error
+
+  .row
+    .col-md-4
+    .col-md-4
+      = form_tag(:action => 'create') do
+        .form-group 
+          %label Email/Username:
+          %input{:class => 'form-control', :value=>@user.email, :name=>:email}
+        .form-group
+          %label Password: 
+          %input{:class => 'form-control', :type => :password, :name=>:password, :id=>"pwd1"}
+        .form-group
+          %label Password Confirm: 
+          %input{:class => 'form-control', :type => :password, :name=>:pswdconfirm, :id=>"pwd2"}
+          :javascript
+            $(function(){
+              $("#pwd2").blur(function(){
+                if(!$(this).val || $(this).val()!=$("#pwd1").val() ){
+                    $("#myModal").modal();
+                }
+              });
+            });
+        .form-group
+          %label Last Name:
+          %input{:class => 'form-control', :value=>@user.lastname, :name=>:lastname}
+        .form-group
+          %label First Name:
+          %input{:class => 'form-control', :value=>@user.firstname, :name=>:firstname}
+        .form-group
+          %label Gender
+          %label.checkbox-inline
+            %input{:type=>'radio', :value=>'male', :name=>:gender}
+            Male
+          %label.checkbox-inline
+            %input{:type=>'radio', :value=>'female', :name=>:gender}
+            Female
+
+        .form-group
+          %label Zipcode:
+          %input{:class => 'form-control', :value=>@user.zipcode, :name=>:zipcode}
+        .row
+          .col-md-4
+          .col-md-4
+            = submit_tag("Create", :class => 'btn btn-success')
+          .col-md-4
+    .col-md-4
+
+.footer{:style => "padding-top: 100px;"}
+  .row{:style => "background-color:rgba(15,39,64,1.00);"}
+    .col-md-3
+    .col-md-6
+      =image_tag "im3.png", :width=>"100%"
+    .col-md-3

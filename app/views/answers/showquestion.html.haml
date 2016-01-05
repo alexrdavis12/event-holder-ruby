@@ -1,0 +1,86 @@
+= javascript_include_tag "show_question"
+
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+        
+.container
+
+  .row
+    .col-md-2
+    .col-md-8
+      %h1= @flash_notice
+
+  .row
+    .col-md-2
+    .col-md-8
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Question
+        .panel-body
+          = form_tag(:action => 'create') do
+            %input{:type=>"hidden", :value=>@eid, :name=>:q_eid}
+            - @q.each do |q|
+              -hidden = 0
+              -if q.qparentid != nil
+                -hidden = 'display:none'
+              -else
+                -hidden = ''
+
+              .form-group{:style => "#{hidden}", :hash => "hash_#{q.qparentid}_#{q.parentopt}",:parentid => q.qparentid, :parentopt => q.parentopt}
+                %label
+                  = q.qtitle
+                -if q.qtype == "2"
+                  - optionlist = q.qoption.split('|')
+                  - optcnt = 0
+                  - optionlist.each do |opt|
+                    %label.checkbox-inline
+                      - optcnt += 1
+                      %input{:type => 'checkbox', :qid =>q.qid, :value => optcnt, :name=>"Q#{q.qid}_checkboxes[answer#{optcnt}]"} 
+                      = opt
+                -elsif q.qtype == "3"
+                  %br
+                  - optionlist = q.qoption.split('|')
+                  - optcnt = 0
+                  - optionlist.each do |opt|
+                    %label.checkbox-inline
+                      - optcnt += 1
+                      %input{:type => 'radio', :qid =>q.qid, :value=>optcnt, :name=>"Q#{q.qid}[answer]"}
+                      = opt
+                -elsif q.qtype == "4"
+                  - optionlist = q.qoption.split('|')
+                  %select{:class => 'form-control', :qid =>q.qid, :name => "Q#{q.qid}[answer]"}
+                    - optcnt = 0
+                    %option{:disabled =>"", :selected =>"" } -- select an option --
+                    - optionlist.each do |opt|
+                      - optcnt += 1
+                      %option{:value => optcnt}= "#{opt}"
+                -elsif q.qtype == "5"
+                  %textarea{:class => 'form-control', :value=>'', :name=>"Q#{q.qid}[answer]"}
+                -else
+                  %input{:class => 'form-control', :value=>'', :name=>"Q#{q.qid}[answer]"}
+            = submit_tag("Submit", :class => 'btn btn-primary')
+    .col-md-2
+
+
+.footer{:style => "padding-top: 100px;"}
+  .row{:style => "background-color:rgba(15,39,64,1.00);"}
+    .col-md-3
+    .col-md-6
+      =image_tag "im3.png", :width=>"100%"
+    .col-md-3

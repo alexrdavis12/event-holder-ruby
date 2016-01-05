@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eid: 1
+  etitle: MyString
+  elocation: MyString
+  estart: 2015-10-14
+  eend: 2015-10-14
+  edescription: MyText
+
+two:
+  eid: 1
+  etitle: MyString
+  elocation: MyString
+  estart: 2015-10-14
+  eend: 2015-10-14
+  edescription: MyText

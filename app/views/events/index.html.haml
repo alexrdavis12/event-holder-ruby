@@ -1,0 +1,91 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} M.A.G.I
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a{:href=>'allevent'}
+        %i{:class=>"fa fa-align-justify fa-fw"} 
+        Event
+
+    %li
+      %a{:href=>'profile'}
+        %i{:class=>"fa fa-user fa-fw"} 
+        Profile
+        
+    %li
+      %a{:href=>'logout'}
+        %i{:class=>"fa fa-sign-out fa-fw"} 
+        Logout
+.container
+  .row
+    .panel-group
+      %div{:class => "panel panel-primary"}
+        %div{:class => "panel-heading"} 
+          %h1 Event
+        .row
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 Event Title
+          .col-md-5
+            %br
+            %input{:class => 'form-control', :name=>:event_name}
+
+        .row
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 Event Location
+          .col-md-5
+            %br
+            %input{:class => 'form-control', :name=>:event_location}
+
+        .row
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 Event Description
+          .col-md-5
+            %br
+            %textarea{:class => 'form-control', :rows => "8", :name=>:event_description}
+            %br
+
+        .row
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 Start Date
+          .col-md-5
+            %br
+            %input{:type => 'text', :class => 'form-control', :id =>'datetimepicker4'}
+          :javascript
+            $(function () {
+              $('#datetimepicker4').datepicker();
+            });
+
+        .row
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 Start Date & Time
+          .col-md-4
+            .form-group
+              %div{:class => 'input-group date'}
+                %br
+                %input{:type => 'text', :class => 'form-control', :id =>'datetimepicker6'}
+          .col-md-2
+            %div{:class => "panel-body"}
+              %h5 End Date & Time
+          .col-md-4
+            .form-group
+              %div{:class => 'input-group date'}
+                %br
+                %input{:type => 'text', :class => 'form-control', :id =>'datetimepicker7'}
+          :javascript
+            $(function () {
+              $('#datetimepicker6').datetimepicker();
+              $('#datetimepicker7').datetimepicker({
+                    useCurrent: false 
+              });
+              $("#datetimepicker6").on("dp.change", function (e) {
+                  $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+              });
+              $("#datetimepicker7").on("dp.change", function (e) {
+                  $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+              });
+            });

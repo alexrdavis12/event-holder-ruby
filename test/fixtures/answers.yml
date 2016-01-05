@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eid: 1
+  uid: 1
+  qid: 1
+  answer: MyString
+
+two:
+  eid: 1
+  uid: 1
+  qid: 1
+  answer: MyString
